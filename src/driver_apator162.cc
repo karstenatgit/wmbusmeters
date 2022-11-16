@@ -75,7 +75,7 @@ namespace
         map<string,pair<int,DVEntry>> vendor_values;
 
         // The first 8 bytes are error flags and a date time.
-        // E.g. 0F005B5996000000
+        // E.g. 0F005B5996000000 therefore we skip the first 8 bytes.
         size_t i=8;
         while (i < content.size())
         {
@@ -137,10 +137,7 @@ namespace
         case 0x75: return 1+6*4; // Historical data
         case 0x7B: return 1+12*4; // Historical data
 
-            // case 0x80: return 3; // Apparently payload can also start with 0x80, but hey,
-            // what happened to 0x0f which indicated mfct data? 0x80 is a valid dif
-            // now its impossible to see that the telegram contains mfct data....
-            // except by using the mfct/type/version info.
+        case 0x80: return 10;
         case 0x81: return 10;
         case 0x82: return 10;
         case 0x83: return 10;
@@ -262,3 +259,9 @@ namespace
 // telegram=4E4401068686140005077A350040852F2F_0F005B599600000010AA66000041545A42850BD800437D037301C5500000564B00009E4600006A410000A01778EC03FFFFFFFFFFFFFFFFFFFFFFFFFFE393
 // {"media":"water","meter":"apator162","name":"NewAndOld","id":"00148686","total_m3":26.282,"timestamp":"1111-11-11T11:11:11Z"}
 // |NewAndOld;00148686;26.282;1111-11-11 11:11.11
+
+
+// Test: has80 apator162 04040404 NOKEY
+// telegram=|704401060404040405077A0E0060852F2F_0F766DFB96010000430600808F67DB8F67DB01010000102F1F01007B01000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000A05F5C1804FFFFFFFFFFFFFFFFFFFF26BCD649|
+// {"media":"water","meter":"apator162","name":"has80","id":"04040404","total_m3":73.519,"timestamp":"1111-11-11T11:11:11Z"}
+// |has80;04040404;73.519;1111-11-11 11:11.11

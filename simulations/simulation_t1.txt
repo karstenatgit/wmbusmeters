@@ -12,7 +12,7 @@ telegram=|A244EE4D111111113C077AAC000000_0C1389490000426CE1F14C130000000082046C2
 
 telegram=|AF46EE4D2827282716087A80000000_046D040A9F2A036E000000426CE1F7436E000000525900008288016C61258388016E0000008D8801EE1E3533FE00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005FF2D0000803F8520FF2D0000803F0259AD0A0265D8041259AD0A8310FD3100000082106C01018110FD610082206C9F2A0BFD0F01030102FF2C000002FD66AC08|
 {"media":"heat cost allocation","meter":"sontex868","name":"MyHeatCoster","id":"27282728","current_consumption_hca":0,"set_date":"2127-07-01","consumption_at_set_date_hca":0,"current_temp_c":27.33,"current_room_temp_c":12.4,"max_temp_c":27.33,"max_temp_previous_period_c":0,"device_date_time":"2020-10-31 10:04","timestamp":"1111-11-11T11:11:11Z"}
-|MyHeatCoster;27282728;0.000000;2127-07-01;0.000000;1111-11-11 11:11.11
+|MyHeatCoster;27282728;0;2127-07-01;0;1111-11-11 11:11.11
 
 # Test iPerl T1 telegram, after decryption, its got 2f2f markers.
 
@@ -73,8 +73,8 @@ telegram=|33446850341211119480A2_0F9F292D005024040011BD0838090400000007000000000
 
 # Test FHKV data IV
 telegram=|4E4468507620541494087AAD004005089D86B62A329B3439873999738F82461ABDE3C7AC78692B363F3B41EB68607F9C9160F550769B065B6EA00A2E44346E29FF5DC5CB86283C69324AD33D137F6F|
-{"media":"heat cost allocation","meter":"fhkvdataiv","name":"Rooom","id":"14542076","current_consumption_hca":2,"set_date":"2020-12-31","consumption_at_set_date_hca":25,"set_date_1":"2020-12-31","consumption_at_set_date_1_hca":25,"set_date_17":"2019-10-31","consumption_at_set_date_8_hca":0,"error_date":"","device_date_time":"","timestamp":"1111-11-11T11:11:11Z"}
-|Rooom;14542076;2.000000;2020-12-31;25.000000;1111-11-11 11:11.11
+{"media":"heat cost allocation","meter":"fhkvdataiv","name":"Rooom","id":"14542076","status":OK","current_consumption_hca":2,"set_date":"2020-12-31","consumption_at_set_date_hca":25,"set_date_1":"2020-12-31","consumption_at_set_date_1_hca":25,"set_date_8":"2019-10-31","consumption_at_set_date_8_hca":0,"timestamp":"1111-11-11T11:11:11Z"}
+|Rooom;14542076;2;2020-12-31;25;1111-11-11 11:11.11
 
 # Test EurisII T1 telegrams
 
@@ -209,7 +209,7 @@ telegram=|2E4401069897969501167A4B0320052F2F_0413320C000003FD1700000044132109000
 
 # Test Sensostar 2 heat meter
 telegram=|9E44C5147956341200047A7B0090052F2F_046D25248A2B04063D1F000001FD17000415265F00004406131F0000840106901E0000C40106841E0000840206841E0000C402067A1E0000840306541E0000C40306021E00008404069E1D0000C40406D71C0000840506F21B0000C40506681A00008406061E190000C40606EB1700008407061C170000C40706EE1600002F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F|
-{"media":"heat","meter":"sensostar","name":"Heater","id":"12345679","meter_timestamp":"2020-11-10 04:37","total_kwh":7997,"total_water_m3":2435.8,"current_status":"OK","reporting_date":null,"energy_consumption_at_reporting_date_kwh":7955,"consumption_1_months_ago_kwh":7824,"consumption_2_months_ago_kwh":7812,"consumption_3_months_ago_kwh":7764,"consumption_4_months_ago_kwh":7582,"consumption_5_months_ago_kwh":7154,"consumption_6_months_ago_kwh":6430,"consumption_7_months_ago_kwh":5916,"consumption_8_months_ago_kwh":0,"consumption_9_months_ago_kwh":0,"consumption_10_months_ago_kwh":0,"consumption_11_months_ago_kwh":0,"consumption_12_months_ago_kwh":0,"consumption_13_months_ago_kwh":0,"consumption_14_months_ago_kwh":0,"consumption_15_months_ago_kwh":0,"timestamp":"1111-11-11T11:11:11Z"}
+{"media":"heat","meter":"sensostar","name":"Heater","id":"12345679","meter_timestamp":"2020-11-10 04:37","total_kwh":7997,"total_water_m3":2435.8,"current_status":"OK","reporting_date":null,"energy_consumption_at_reporting_date_kwh":7955,"consumption_1_months_ago_kwh":7955,"consumption_2_months_ago_kwh":7824,"consumption_3_months_ago_kwh":7812,"consumption_4_months_ago_kwh":7812,"consumption_5_months_ago_kwh":7802,"consumption_6_months_ago_kwh":7764,"consumption_7_months_ago_kwh":7682,"consumption_8_months_ago_kwh":7582,"consumption_9_months_ago_kwh":7383,"consumption_10_months_ago_kwh":7154,"consumption_11_months_ago_kwh":6760,"consumption_12_months_ago_kwh":6430,"consumption_13_months_ago_kwh":6123,"consumption_14_months_ago_kwh":5916,"consumption_15_months_ago_kwh":5870,"timestamp":"1111-11-11T11:11:11Z"}
 |Heater;12345679;7997.000000;2435.800000;OK;null;7955.000000;1111-11-11 11:11.11
 
 # Test Elster V200H water meter

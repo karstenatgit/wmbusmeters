@@ -63,24 +63,15 @@ LIST_OF_METER_TYPES
     X(unknown,    0,      UnknownMeter, UNKNOWN, Unknown) \
     X(eurisii,    T1_bit, HeatCostAllocationMeter, EURISII, EurisII)   \
     X(evo868,     T1_bit, WaterMeter,       EVO868,      EVO868)       \
-    X(fhkvdataiii,T1_bit, HeatCostAllocationMeter,       FHKVDATAIII,   FHKVDataIII)    \
-    X(fhkvdataiv, T1_bit, HeatCostAllocationMeter,       FHKVDATAIV,    FHKVDataIV)     \
     X(gransystems,T1_bit, ElectricityMeter, CCx01, CCx01) 		       \
-    X(hydrus,     T1_bit, WaterMeter,       HYDRUS,      Hydrus)       \
     X(hydrocalm3, T1_bit, HeatMeter,        HYDROCALM3,  HydrocalM3)   \
     X(hydrodigit, T1_bit, WaterMeter,       HYDRODIGIT,  Hydrodigit)   \
-    X(izar,       T1_bit, WaterMeter,       IZAR,        Izar)         \
-    X(izar3,      T1_bit, WaterMeter,       IZAR3,       Izar3)        \
-    X(mkradio3,   T1_bit, WaterMeter,       MKRADIO3,    MKRadio3)     \
-    X(mkradio4,   T1_bit, WaterMeter,       MKRADIO4,    MKRadio4)     \
     X(multical302,C1_bit|T1_bit, HeatMeter,        MULTICAL302, Multical302)  \
     X(multical403,C1_bit, HeatMeter,        MULTICAL403, Multical403)  \
     X(multical602,C1_bit, HeatMeter,        MULTICAL602, Multical602)  \
     X(multical803,C1_bit, HeatMeter,        MULTICAL803, Multical803)  \
     X(rfmamb,     T1_bit, TempHygroMeter,   RFMAMB,      RfmAmb)       \
     X(rfmtx1,     T1_bit, WaterMeter,       RFMTX1,      RfmTX1)       \
-    X(tsd2,       T1_bit, SmokeDetector,    TSD2,        TSD2)         \
-    X(sontex868,  T1_bit, HeatCostAllocationMeter, SONTEX868, Sontex868) \
     X(lse_08,     S1_bit|C1_bit, HeatCostAllocationMeter, LSE_08, LSE_08) \
 
 
@@ -117,7 +108,8 @@ bool isMeterDriverValid(MeterDriver type, int manufacturer, int media, int versi
 // Ie. do not try to decode a door sensor telegram with a water meter driver.
 bool isMeterDriverReasonableForMedia(MeterDriver type, string driver_name, int media);
 
-bool isValidKey(const string& key, MeterDriver mt);
+struct MeterInfo;
+bool isValidKey(const string& key, MeterInfo &mt);
 
 using namespace std;
 
